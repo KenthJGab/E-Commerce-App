@@ -44,8 +44,6 @@ export default function OrderHistory  ()  {
   return (
     <div
       style={{
-        backgroundImage: 'url(https://i.ibb.co/ThKT97F/Blue-and-Yellow-Modern-Business-E-Commerce-Presentation-Template.png)',
-        backgroundSize: 'cover',
         minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -58,10 +56,10 @@ export default function OrderHistory  ()  {
         <h2 className='text-center' style={{ fontSize: '1.5em', marginBottom: '-5px' }}>Order History</h2>
         <br />
         <br />
-        <Row xs={1} md={2} lg={5} className="g-4">
+        <Row className="g-4 d-flex justify-content-center">
           {orderHistory.map((order, index) => (
             <Col key={index}>
-              <Card className='p-2' style={{ marginBottom: '10px' }}>
+              <Card className='p-3 mx-auto' style={{ marginBottom: '10px', width: '450px' }}>
                 <Card.Body>
                   <Card.Title><strong>Order #{order.id}</strong></Card.Title>
                   <Card.Text>
@@ -76,4 +74,4 @@ export default function OrderHistory  ()  {
       </div>
     </div>
   );
-}
+};
