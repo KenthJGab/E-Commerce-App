@@ -117,28 +117,32 @@ export default function UserCart() {
   return (
     <div style={{ backgroundImage: 'url(https://i.ibb.co/ThKT97F/Blue-and-Yellow-Modern-Business-E-Commerce-Presentation-Template.png)', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ maxWidth: '1200px', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px' }}>
-      
         <h2 className='text-center' >Cart</h2>
         <br/>
-        <Row className='justify-content-center' >
+        <Row className='justify-content-center'>
           {cartProducts.map((product) => (
-            <Col key={product.productId} xs={12} sm={6} lg={3}>
-              <Card style={{ marginBottom: '20px', padding: '10px', marginLeft: '15px', marginRight: '15px' }}>
-                <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>
-                    <strong>Description:</strong> {product.description || 'No Description'} <br />
-                    <strong>Price:</strong> {product.price || 0}
-                    <br />
-                    <strong>Quantity:</strong> {product.quantity || 0} <br />
-                    <strong>Total Price:</strong> {product.totalPerProduct || 0} <br />
-                  </Card.Text>
-                  <Button variant="danger" size="sm" onClick={() => handleRemoveProduct(product.productId)}>
-                    Remove
-                  </Button>{'   '}
-                  <Button variant="secondary" size="sm" onClick={handleCheckout}>
-                    Checkout
-                  </Button>
+            <Col key={product.productId} className="d-flex">
+              <Card className="w-100" style={{ marginBottom: '20px', padding: '10px' }}>
+                <Card.Body className="d-flex flex-column justify-content-between">
+                  <div>
+                    <Card.Title>{product.name}</Card.Title>
+                    <Card.Text>
+                      <strong>Description:</strong> {product.description || 'No Description'} <br />
+                      <strong>Price:</strong> {product.price || 0}
+                      <br />
+                      <strong>Quantity:</strong> {product.quantity || 0} <br />
+                      <strong>Total Price:</strong> {product.totalPerProduct || 0} <br />
+                    </Card.Text>
+                  </div>
+                  <br/>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Button variant="danger" size="sm" onClick={() => handleRemoveProduct(product.productId)}>
+                      Remove
+                    </Button>
+                    <Button variant="secondary" size="sm" onClick={handleCheckout}>
+                      Checkout
+                    </Button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
@@ -147,4 +151,4 @@ export default function UserCart() {
       </div>
     </div>
   );
-}
+};
