@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 //cour
 export default function Home() {
 	const data = {
-		image: "https://i.ibb.co/7JRwCVY/SHop-SHee-SH.jpg", 
+		image: "https://i.ibb.co/y41N0PP/fashion-meets-aesthetics.png", 
 		destination: "/products",
 
 	  };
